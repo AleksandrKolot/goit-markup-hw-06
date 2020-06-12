@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <header class="header-bar is-hidden">
+  <header class="header-bar hidden">
     <div class="container">
       <nav class="main-nav">
         <a href="./index.html" class="logo">Web <span class="studio-logo">Studio</span></a>
@@ -50,7 +50,12 @@
     <section class="hero">
       <div class="content-hero">
         <h1 class="hero-title">эффективные решения для вашего бизнеса</h1>
-        <a href="" class="button">Заказать услугу</a>
+        <button class="button" data-modal-open="">Заказать услугу</button>
+      </div>
+      <div class="backdrop is-hidden" data-modal="">
+        <div class="popup-window">
+
+        </div>
       </div>
     </section>
 
@@ -397,6 +402,7 @@
       <p class="copyright text">2020 | Developed by GoIT Students</p>
     </div>
   </footer>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>
