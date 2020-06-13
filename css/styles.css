@@ -189,7 +189,7 @@ rgba(47, 48, 58, 0.8)),
 }
 .button { 
   display: inline-block;
-  width: auto;
+  min-width: 200px;
   border-radius: 4px;
   padding: 10px 32px;
 
@@ -201,8 +201,12 @@ rgba(47, 48, 58, 0.8)),
   background-color: var(--accent-color);
   line-height: 1.9;
   letter-spacing: 0.06em;
-
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button:hover {
+  background-color: #1489e9;
 }
 .backdrop {
   position: fixed;
@@ -245,17 +249,21 @@ rgba(47, 48, 58, 0.8)),
   align-items: center;
   justify-content: center;
  
-  top: 0;
-  right: 0;
+  top: -10px;
+  right: -10px;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  background-color: var(--primary-bg-color);
   border: 2px solid transparent;
+  border-radius: 50%;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 
   0px 1px 1px rgba(0, 0, 0, 0.14), 
   0px 1px 3px rgba(0, 0, 0, 0.12);
-  transform: translate(25%, -25%) scale(1);
-  transition: transform  250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-close:hover {
+  background-color: var(--accent-color);
 }
 .form-appeal {
   display: inline-block;
@@ -341,6 +349,46 @@ rgba(47, 48, 58, 0.8)),
 .data-input:not(:placeholder-shown) + .comment-text {
   color: var(--accent-color);
   transform: translateY(-37px) scale(0.86);
+}
+.data-policy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.data-policy .checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.checkbox-icon {
+  display: inline-block;
+  margin-right: 8px;
+
+  width: 16px;
+  height: 15px;
+  border: 2px solid #2a2a2a;
+  border-radius: 2px;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox:checked + .checkbox-icon {
+  border-color: transparent;
+  background-color: var(--accent-color);
+  background-image: url("../image/check.svg");
+  background-size: contain;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.deal-link {
+  color: var(--accent-color);
+  text-decoration: underline;
 }
 
 /* Утилита отступ в секциях */
